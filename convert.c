@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "../Vector/vector.h"
+#include "vector.h"
 #include "convert.h"
 
 int state = J;
