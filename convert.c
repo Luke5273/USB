@@ -4,7 +4,7 @@
 #include "convert.h"
 
 /// @brief state of the data currently
-extern int state = J;
+static int state = J;
 
 Vector toNRZI(int* data, int flags)
 {

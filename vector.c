@@ -1,6 +1,9 @@
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 #include "vector.h"
+
+#define INDEX_CHECK() if(index > vec->size) {printf("Error: Index out of range\n"); exit(1);}
 
 Vector vec_init(int value)
 {
