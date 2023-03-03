@@ -6,7 +6,7 @@ target = main.exe
 all: main.c
 	gcc -c -Wall -Werror -fpic $(fileIncludes)  
 	gcc main.c -o $(target) $(fileIncludes)
-	./main.exe
+	./main.exe 
 
 compile: main.c
 	gcc -c -Wall -Werror -fpic $(fileIncludes)  
