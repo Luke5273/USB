@@ -20,7 +20,7 @@ void vec_put(Vector* vec, int value, int index)
     if(vec->size >= vec->capacity)
     {
         vec->capacity = (vec->capacity)*2;
-        vec->data = reallocarray(vec->data, vec->capacity, sizeof(int));
+        vec->data = realloc(vec->data, vec->capacity * sizeof(int));
     }
 
     for(int i = vec->size; i >= index; i--)

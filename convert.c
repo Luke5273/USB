@@ -3,18 +3,8 @@
 #include "vector.h"
 #include "convert.h"
 
-int state = J;
-
-int main()
-{
-    int data[] = {1,0,0,1,0,1,0};
-    Vector NRZI = toNRZI(data, 0);
-
-    for(int i = 0; i < NRZI.size; i++)
-    {
-        printf("%d", NRZI.data[i]);
-    }printf("\n");
-}
+/// @brief state of the data currently
+extern int state = J;
 
 Vector toNRZI(int* data, int flags)
 {
