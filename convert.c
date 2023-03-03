@@ -6,19 +6,19 @@
 /// @brief state of the data currently
 static int state = J;
 
-Vector toNRZI(int* data, int flags)
+Vector toNRZI(int* data, int size, int flags)
 {
-    Vector output = vec_init(data[0] ^ state);
+    state ^= (!data[0]);
+    Vector output = vec_init(state);
     
-    int dataSize = sizeof(data)/sizeof(int);
     int repsOf1 = 0;
 
-    for(int i = 1; i < dataSize; i++)
+    for(int i = 1; i < size; i++)
     {
-        state ^= (data[i]^1);
+        state ^= (!data[i]);
         vec_push(&output, state);
         
-        if(flags & BIT_STIFFING)
+        if(flags & BIT_STUFFING)
         {
             if(data[i] == 1)
                 repsOf1++;

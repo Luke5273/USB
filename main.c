@@ -4,8 +4,8 @@
 
 int main()
 {
-    int data[] = {1,0,0,1,0,1,0};
-    Vector NRZI = toNRZI(data, 0);
+    int data[] = {1,1,1,1};  //011111111
+    Vector NRZI = toNRZI(data, sizeof(data)/sizeof(int), NONE);
 
     for(int i = 0; i < NRZI.size; i++)
     {

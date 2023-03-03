@@ -19,4 +19,8 @@ int vec_remove(Vector* vec, int index);
 
 int vec_pop(Vector* vec);
 
+int vec_get(Vector* vec, int index);
+
+void vec_set(Vector* vec, int index, int val);
+
 #endif

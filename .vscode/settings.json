@@ -2,5 +2,8 @@
     "files.associations": {
         "stdlib.h": "c",
         "stdio.h": "c"
-    }
+    },
+    "cmake.configureOnOpen": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.makefile-tools",
+    "C_Cpp.errorSquiggles": "enabled"
 }

@@ -20,10 +20,10 @@ void vec_put(Vector* vec, int value, int index)
 {
     INDEX_CHECK();
 
-    if(vec->size >= vec->capacity)
+    while(vec->size >= vec->capacity)
     {
         vec->capacity = (vec->capacity)*2;
-        vec->data = realloc(vec->data, vec->capacity * sizeof(int));
+        vec->data = (int*)realloc(vec->data, vec->capacity * sizeof(int));
     }
 
     for(int i = vec->size; i >= index; i--)
@@ -57,4 +57,16 @@ int vec_remove(Vector* vec, int index)
 int vec_pop(Vector* vec)
 {
     return vec_remove(vec, vec->size-1);
+}
+
+int vec_get(Vector* vec, int index)
+{
+    INDEX_CHECK();
+    return vec->data[index];
+}
+
+void vec_set(Vector* vec, int index, int val)
+{
+    INDEX_CHECK();
+    vec->data[index] = val;
 }
