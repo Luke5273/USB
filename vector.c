@@ -22,13 +22,13 @@ void vec_put(Vector* vec, int value, int index)
 
     while(vec->size >= vec->capacity)
     {
-        vec->capacity = (vec->capacity)*2;
+        vec->capacity *= 2;
         vec->data = (int*)realloc(vec->data, vec->capacity * sizeof(int));
     }
 
     for(int i = vec->size; i >= index; i--)
     {
-        vec->data[i+1] = vec->data[i];
+        vec->data[i+1] = vec->data[i]; //rewrite with vec_get/set
     }
 
     vec->data[index] = value;
